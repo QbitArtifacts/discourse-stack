@@ -6,9 +6,10 @@ volumes:
   discourse_data:
   sidekiq_data:
 
-
 networks:
-  frontal-${ENVIRONMENT}:
+  frontal-stage:
+    external: true
+  frontal-prod:
     external: true
 
 services:
@@ -66,8 +67,8 @@ services:
       - POSTGRESQL_CLIENT_CREATE_DATABASE_EXTENSIONS=hstore,pg_trgm
 
     networks:
-      - frontal-${ENVIRONMENT}
       - default
+      - frontal-${ENVIRONMENT}
 
     deploy:
       mode: replicated
