@@ -17,5 +17,5 @@ properly configured, for more info about swarm mode, there is a
 
 Installation must be done from a manager node.
 ```shell
-docker stack deploy -c <(docker-compose -f stack.yaml --env-file .env.local config) discourse
+docker stack deploy -c <(docker-compose -f stack.yml --env-file .env.local config) discourse
 ```
