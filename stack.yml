@@ -27,8 +27,7 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.env == ${ENVIRONMENT}
-          - node.labels.${PROJECT}
+          - node.labels.${PROJECT} == ${ENVIRONMENT}
 
   redis:
     image: bitnami/redis:6.0
@@ -42,8 +41,7 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.env == ${ENVIRONMENT}
-          - node.labels.${PROJECT}
+          - node.labels.${PROJECT} == ${ENVIRONMENT}
 
   discourse:
     image: bitnami/discourse:2
@@ -67,8 +65,8 @@ services:
       - POSTGRESQL_CLIENT_CREATE_DATABASE_EXTENSIONS=hstore,pg_trgm
 
     networks:
-      - default
       - frontal-${ENVIRONMENT}
+      - default
 
     deploy:
       mode: replicated
@@ -80,8 +78,7 @@ services:
         traefik.tags: "${ENVIRONMENT}"
       placement:
         constraints:
-          - node.labels.env == ${ENVIRONMENT}
-          - node.labels.${PROJECT}
+          - node.labels.${PROJECT} == ${ENVIRONMENT}
   sidekiq:
     image: bitnami/discourse:2
     depends_on:
@@ -104,5 +101,4 @@ services:
       replicas: 1
       placement:
         constraints:
-          - node.labels.env == ${ENVIRONMENT}
-          - node.labels.${PROJECT}
+          - node.labels.${PROJECT} == ${ENVIRONMENT}
