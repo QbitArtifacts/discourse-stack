@@ -68,6 +68,8 @@ services:
       - DISCOURSE_SMTP_USER=${SMTP_USER}
       - DISCOURSE_SMTP_PASSWORD=${SMTP_PASSWORD}
       - DISCOURSE_SMTP_PROTOCOL=${SMTP_PROTOCOL}
+      - DISCOURSE_ENABLE_CORS=true
+
 
     networks:
       - frontal-${ENVIRONMENT}
@@ -106,6 +108,8 @@ services:
       - DISCOURSE_SMTP_USER=${SMTP_USER}
       - DISCOURSE_SMTP_PASSWORD=${SMTP_PASSWORD}
       - DISCOURSE_SMTP_PROTOCOL=${SMTP_PROTOCOL}
+      - DISCOURSE_ENABLE_CORS=true
+
     deploy:
       mode: replicated
       replicas: 1
