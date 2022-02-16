@@ -81,6 +81,7 @@ services:
       replicas: 1
       labels:
         traefik.frontend.rule: Host:${HOST}
+        traefik.frontend.headers.customResponseHeaders: "Access-Control-Allow-Origin:*|Access-Control-Allow-Headers:*"
         traefik.port: 3000
         traefik.enable: "true"
         traefik.tags: "${ENVIRONMENT}"
