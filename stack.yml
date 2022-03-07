@@ -70,6 +70,7 @@ services:
       - DISCOURSE_SMTP_PROTOCOL=${SMTP_PROTOCOL}
       - DISCOURSE_ENABLE_CORS=true
       - DISCOURSE_CORS_ORIGIN=http://localhost:64227
+      - DISCOURSE_ALWAYS_INCLUDE_TOPIC_EXCERPTS=true
 
 
     networks:
