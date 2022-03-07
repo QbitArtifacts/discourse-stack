@@ -44,7 +44,7 @@ services:
           - node.labels.${PROJECT} == ${ENVIRONMENT}
 
   discourse:
-    image: bitnami/discourse:2
+    image: bitnami/discourse:2.7.13
     volumes:
       - 'discourse_data:/bitnami/discourse'
     depends_on:
@@ -90,7 +90,7 @@ services:
         constraints:
           - node.labels.${PROJECT} == ${ENVIRONMENT}
   sidekiq:
-    image: bitnami/discourse:2
+    image: bitnami/discourse:2.7.13
     depends_on:
       - discourse
     volumes:
