@@ -111,6 +111,7 @@ services:
       - DISCOURSE_SMTP_PASSWORD=${SMTP_PASSWORD}
       - DISCOURSE_SMTP_PROTOCOL=${SMTP_PROTOCOL}
       - DISCOURSE_ENABLE_CORS=true
+      - DISCOURSE_ALWAYS_INCLUDE_TOPIC_EXCERPTS=true
       - DISCOURSE_CORS_ORIGIN=http://localhost:64227
     deploy:
       mode: replicated
